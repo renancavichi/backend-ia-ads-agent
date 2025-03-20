@@ -1,6 +1,7 @@
 import express from 'express'
 import { iaController } from './controllers/iaController.js'
 import cors from 'cors'
+import { messageController } from './controllers/messageController.js'
 
 const app = express()
 const port = 3000
@@ -13,6 +14,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/ia', iaController)
+
+app.get('/messages', messageController)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
